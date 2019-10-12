@@ -4,7 +4,8 @@ import axios from 'axios';
 import styled from 'styled-components';
 
 
-import CharacterCard from "./CharacterCard.js";
+import CharacterCard from "./CharacterCard";
+import SearchForm from "./SearchForm";
 
 
 const DivFlex = styled.div`
@@ -35,9 +36,8 @@ export default function CharacterList() {
 
   return (
   <DivFlex>
-    {
-      charRM.map((char, index) => <CharacterCard key = {index} cObject = {char} />)
-    }
+    {charRM.map((char, index) => <SearchForm key = {index} cObject = {char}/>)}
+    {charRM.map((char, index) => <CharacterCard key = {index} cObject = {char}/>)}
   </DivFlex>
   );
 }
