@@ -36,8 +36,10 @@ export default function CharacterList() {
 
   return (
   <DivFlex>
-    {charRM.map((char, index) => <SearchForm key = {index} cObject = {char}/>)}
-    {charRM.map((char, index) => <CharacterCard key = {index} cObject = {char}/>)}
+    <SearchForm charRM={charRM} />
+    {
+      charRM.map((char, index) => <CharacterCard key = {index} cObject = {char} />)
+    }
   </DivFlex>
   );
 }

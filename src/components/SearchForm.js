@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-export default function SearchForm() {
+
+export default function SearchForm(props) {
   const [formValues, setFormValues] = useState([{
      name: ""
    }]);
@@ -13,7 +14,6 @@ export default function SearchForm() {
    };
    const onFormSubmit = event => {
      event.preventDefault();
-     alert(`submitting ${formValues.name}`);
    };
    return (
      <div>
