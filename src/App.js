@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import WelcomePage from "./components/WelcomePage";
 import CharacterList from "./components/CharacterList";
 
-export default function App() {
+const App = () => {
   return (
     <main>
       <Header />
@@ -11,4 +11,6 @@ export default function App() {
       <CharacterList />
     </main>
   );
-}
+};
+
+export default App;

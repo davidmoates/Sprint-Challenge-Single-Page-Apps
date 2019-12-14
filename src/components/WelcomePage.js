@@ -9,7 +9,7 @@ const Img = styled.img`
   width: 50%;
 `;
 
-export default function WelcomePage() {
+const WelcomePage = () => {
   return (
     <section className="welcome-page">
       <header>
@@ -22,4 +22,6 @@ export default function WelcomePage() {
       </header>
     </section>
   );
-}
+};
+
+export default WelcomePage;
