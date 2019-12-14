@@ -20,16 +20,37 @@ const CharacterList = () => {
     axios
       .get("https://rickandmortyapi.com/api/character/")
       .then(response => {
-        console.log(response.data.results);
         setCharacters(response.data.results);
       })
       .catch(error => {
-        console.log("The error is: ", error);
+        return <p>The error is: {error}</p>;
       });
   }, []);
+  const [searchTerm, setSearchTerm] = useState("");
+  useEffect(() => {}, [searchTerm]);
+
+  const handleChange = event => {
+    setSearchTerm(event.target.value);
+
+    const results = characters.filter(character => {
+      return character.name.toLowerCase().includes(searchTerm.toLowerCase());
+    });
+    setCharacters(results);
+  };
 
   return (
     <section className="character-list">
+      <form>
+        <label htmlFor="name">Search:</label>
+        <input
+          id="name"
+          type="text"
+          name="textfield"
+          placeholder="Search"
+          onChange={handleChange}
+          value={searchTerm}
+        />
+      </form>
       <DivFlex>
         {characters.map((character, index) => (
           <CharacterCard key={index} character={character} />
