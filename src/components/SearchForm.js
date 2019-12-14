@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 export default function SearchForm(props) {
   const [formValues, setFormValues] = useState([{
-     name: ""
+     
    }]);
 
    const onValueChange = event => {
