@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+import CharacterCard from "./CharacterCard";
+
 import styled from "styled-components";
 
 const DivFlex = styled.div`
@@ -28,7 +30,11 @@ const CharacterList = () => {
 
   return (
     <section className="character-list">
-      <DivFlex></DivFlex>
+      <DivFlex>
+        {characters.map((character, index) => (
+          <CharacterCard key={index} character={character} />
+        ))}
+      </DivFlex>
     </section>
   );
 };
